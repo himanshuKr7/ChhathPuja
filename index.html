@@ -1,13 +1,39 @@
 <!doctype html>
-<html lang="en">
+<html lang="hi-IN">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#741d17" />
+		<meta name="robots" content="index, follow, max-image-preview:large" />
 		<meta
 			name="description"
-			content="छठ महापर्व के पारंपरिक गीत, घाट की चित्रकला और अर्घ्य की भक्ति — अर्घ्य रेडियो पर।" />
-		<title>अर्घ्य — Chhath Puja Radio</title>
+			content="अर्घ्य रेडियो पर छठ पूजा के पारंपरिक भोजपुरी गीत सुनें—लोकप्रिय छठ गीत, MP3 गाने, YouTube playlist और छठ घाट की चित्रकला के साथ।" />
+		<link rel="canonical" href="https://chhathpujaradio.vercel.app/" />
+		<meta property="og:type" content="website" />
+		<meta property="og:locale" content="hi_IN" />
+		<meta property="og:site_name" content="अर्घ्य · Chhath Puja Radio" />
+		<meta property="og:title" content="छठ गीत और छठ पूजा रेडियो | अर्घ्य" />
+		<meta
+			property="og:description"
+			content="पारंपरिक भोजपुरी छठ गीत, MP3 गाने, YouTube playlist और घाट की चित्रकला—अर्घ्य रेडियो पर।" />
+		<meta property="og:url" content="https://chhathpujaradio.vercel.app/" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content="छठ गीत और छठ पूजा रेडियो | अर्घ्य" />
+		<meta
+			name="twitter:description"
+			content="पारंपरिक भोजपुरी छठ गीत, MP3 गाने और घाट की चित्रकला—अर्घ्य रेडियो पर।" />
+		<title>छठ गीत और छठ पूजा रेडियो | अर्घ्य</title>
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "WebSite",
+				"name": "अर्घ्य",
+				"alternateName": "Chhath Puja Radio",
+				"url": "https://chhathpujaradio.vercel.app/",
+				"inLanguage": "hi-IN",
+				"description": "छठ पूजा के पारंपरिक भोजपुरी गीत, MP3 गाने और YouTube playlist।"
+			}
+		</script>
 		<style>
 			:root {
 				--wine: #741d17;
@@ -1738,6 +1764,105 @@
 					opacity: 0.35;
 				}
 			}
+			/* Gentle ghat movement; all motion respects the reduced-motion setting above. */
+			.page-painting {
+				transform-origin: center;
+				animation: arghya-painting-drift 28s ease-in-out infinite alternate;
+			}
+			.scene .scene-halo {
+				animation: arghya-halo-breathe 8s ease-in-out infinite;
+			}
+			.scene .sun-disc {
+				animation: arghya-sun-glow 6s ease-in-out infinite;
+			}
+			.scene .water-lines {
+				animation: arghya-water-drift 9s ease-in-out infinite;
+			}
+			.scene .bamboo-one {
+				animation: arghya-bamboo-sway 7s ease-in-out infinite;
+			}
+			.scene .bamboo-two {
+				animation: arghya-bamboo-sway-small 8s ease-in-out infinite;
+			}
+			@keyframes arghya-painting-drift {
+				0% { transform: scale(1); }
+				100% { transform: scale(1.035) translate3d(-0.4%, 0.2%, 0); }
+			}
+			@keyframes arghya-halo-breathe {
+				0%, 100% { opacity: 0.72; transform: translateX(-50%) scale(0.96); }
+				50% { opacity: 1; transform: translateX(-50%) scale(1.04); }
+			}
+			@keyframes arghya-sun-glow {
+				0%, 100% { filter: brightness(1); }
+				50% { filter: brightness(1.1); }
+			}
+			@keyframes arghya-water-drift {
+				0%, 100% { background-position: 0 0; opacity: 0.3; }
+				50% { background-position: 0 12px; opacity: 0.52; }
+			}
+			@keyframes arghya-bamboo-sway {
+				0%, 100% { rotate: -1deg; }
+				50% { rotate: 1deg; }
+			}
+			@keyframes arghya-bamboo-sway-small {
+				0%, 100% { rotate: -0.7deg; }
+				50% { rotate: 0.7deg; }
+			}
+
+
+			/* Visible, slow-moving warm light across the painted background. */
+			.page-frame:after {
+				content: "";
+				position: fixed;
+				inset: -8vh -4vw;
+			z-index: 0;
+			pointer-events: none;
+			opacity: 0.62;
+			background-image:
+				radial-gradient(circle, rgba(255, 205, 112, 0.92) 0 1.6px, transparent 3px),
+				radial-gradient(circle, rgba(255, 246, 205, 0.8) 0 1.2px, transparent 2.8px),
+				radial-gradient(ellipse at 50% 50%, rgba(246, 169, 73, 0.16), transparent 68%);
+			background-size: 113px 127px, 173px 157px, 100% 100%;
+			background-position: 0 0, 43px 61px, center;
+			animation: arghya-ambient-drift 16s ease-in-out infinite alternate;
+			}
+			@keyframes arghya-ambient-drift {
+				0% {
+					transform: translate3d(-1.2%, 0, 0);
+					background-position: 0 0, 43px 61px, center;
+				}
+				100% {
+					transform: translate3d(1.2%, -1.5%, 0);
+					background-position: 113px -127px, -130px 218px, center;
+				}
+			}
+
+
+			.argya-action { margin-top: 14px; }
+			.argya-button {
+				display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+				min-height: 48px; padding: 0 20px; border: 1px solid #e2b85f; border-radius: 999px;
+				color: #fff4d2; background: linear-gradient(135deg, #8b2b1d, #5c1b18);
+				box-shadow: 0 5px 18px rgba(38, 17, 12, 0.35), inset 0 0 0 2px rgba(255, 226, 160, 0.12);
+				font-weight: 700; transition: transform 180ms ease, box-shadow 180ms ease;
+			}
+			.argya-button:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(38, 17, 12, 0.42), 0 0 18px rgba(245, 193, 92, 0.3); }
+			.argya-button:focus-visible { outline: 3px solid #f5cf77; outline-offset: 4px; }
+			.argya-button span { font-size: 20px; }
+			.argya-status { min-height: 1.4em; margin: 7px 0 0; color: #ffe6aa; font-size: 13px; }
+			.offering-rain { position: fixed; inset: 0; z-index: 20; overflow: hidden; pointer-events: none; }
+			.offering-rain-emoji {
+				position: absolute; top: auto; bottom: -9vh; left: var(--fall-x); font-size: var(--fall-size); line-height: 1;
+				filter: drop-shadow(0 2px 5px rgba(70, 35, 14, 0.28));
+				animation: arghya-offering-rise var(--fall-time) ease-out var(--fall-delay) forwards;
+			}
+			@keyframes arghya-offering-rise {
+				0% { opacity: 0; transform: translate3d(0, 4vh, 0) rotate(-18deg); }
+				10%, 85% { opacity: 1; }
+				100% { opacity: 0; transform: translate3d(var(--fall-sway), -120vh, 0) rotate(330deg); }
+			}
+			@media (max-width: 620px) { .argya-button { width: min(100%, 310px); } }
+
 		</style>
 	</head>
 	<body>
@@ -1791,8 +1916,14 @@
 						<a class="listen-cta" href="#radio"
 							><span>♫</span> सुनना शुरू करें</a
 						>
+					<div class="argya-action">
+						<button class="argya-button" id="offerArgyaButton" type="button">
+							<span aria-hidden="true">🙏 🪔</span> अर्घ्य अर्पित करें
+						</button>
+						<p class="argya-status" id="argyaStatus" aria-live="polite"></p>
 					</div>
-					<div class="scene" aria-hidden="true">
+				</div>
+				<div class="scene" aria-hidden="true">
 						<div class="scene-halo"></div>
 						<div class="sun-disc"></div>
 						<div class="mountain mountain-back"></div>
@@ -1958,6 +2089,7 @@
 				<small>अर्घ्य · एक छोटा सा डिजिटल प्रणाम</small>
 			</footer>
 		</div>
+		<div class="offering-rain" id="offeringRain" aria-hidden="true"></div>
 
 		<div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
 		<aside
@@ -2265,6 +2397,24 @@
 				$("sceneLabel").textContent = !pressed ? "जीवंत दृश्य" : "घाट चित्र";
 			}
 
+			function offerArgya() {
+				const rain = $("offeringRain");
+				$("argyaStatus").textContent = "अर्घ्य अर्पित हुआ · छठी मईया की जय!";
+				const offerings = ["🙏", "🪔", "🌼", "🌻", "🌞", "🌸", "🧺", "🍊", "✨", "🪷"];
+				for (let index = 0; index < 42; index += 1) {
+					const particle = document.createElement("span");
+					particle.className = "offering-rain-emoji";
+					particle.textContent = offerings[Math.floor(Math.random() * offerings.length)];
+					particle.style.setProperty("--fall-x", `${Math.random() * 100}%`);
+					particle.style.setProperty("--fall-time", `${2.1 + Math.random() * 1.8}s`);
+					particle.style.setProperty("--fall-delay", `${Math.random() * 0.8}s`);
+					particle.style.setProperty("--fall-size", `${24 + Math.random() * 20}px`);
+					particle.style.setProperty("--fall-sway", `${Math.round(Math.random() * 140 - 70)}px`);
+					particle.addEventListener("animationend", () => particle.remove(), { once: true });
+					rain.append(particle);
+				}
+			}
+
 			audio.addEventListener("play", () => {
 				setPlaying(true);
 				playerMessage.textContent = "प्रार्थना के साथ सुनें · स्थानीय MP3";
@@ -2298,6 +2448,7 @@
 				loadTrack(currentIndex + 1, true),
 			);
 			$("sceneToggle").addEventListener("click", selectScene);
+			$("offerArgyaButton").addEventListener("click", offerArgya);
 			$("songsTrigger").addEventListener("click", openDrawer);
 			$("closeDrawer").addEventListener("click", closeDrawer);
 			backdrop.addEventListener("click", closeDrawer);
